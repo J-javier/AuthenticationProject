@@ -54,14 +54,4 @@
 
 }
 
-.custom-input{
-    border: none; /* Elimina el borde */
-    outline: none; /* Elimina el contorno al enfocar */
-    background: transparent; /* Fondo transparente */
-    font-family: inherit; /* Usa la fuente heredada */
-    font-size: inherit; /* Usa el tamaño de fuente heredado */
-    color: inherit; /* Usa el color de texto heredado */
-    padding: 0; /* Elimina el relleno */
-    margin: 0;
-    
-}
+
