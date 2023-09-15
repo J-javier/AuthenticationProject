@@ -32,7 +32,7 @@
             </section>
             <section class="w-full h-full flex flex-col justify-center items-center">
                 <h1 class="font-bold text-[1.5rem]">We almost done! </h1>
-                <div class="border rounded-md w-[55%] h-[85%] shadow-md border-gray-300">
+                <div class="border rounded-md w-[55%] h-auto shadow-md border-gray-300">
                     <div class="pl-8 py-5 ">
                         <h1 class="font-semibold text-[1.5rem]">Complete information</h1>
                         <p class="text-[#828282]">Information will be saved</p>
@@ -63,7 +63,9 @@
                             <label for="contrasena" class="text-sm ">Password</label><br>
                             <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3"><br>
 
-                            <button class="py-2 px-6 bg-blue-500 text-white rounded-md" name="save">Save</button>
+                            <div class="pb-2 ">
+                                <button class="py-2 px-6 bg-blue-500 text-white rounded-md" name="save">Save</button>
+                            </div>
                         </form>
                     </div>
                 </div>

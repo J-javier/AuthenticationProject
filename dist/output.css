@@ -534,6 +534,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .absolute {
   position: absolute;
 }
@@ -572,6 +576,18 @@ video {
 
 .mb-3 {
   margin-bottom: 0.75rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-32 {
+  margin-left: 8rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .flex {
@@ -646,6 +662,14 @@ video {
   height: 5rem;
 }
 
+.h-\[75\%\] {
+  height: 75%;
+}
+
+.h-auto {
+  height: auto;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -700,6 +724,30 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-\[10\%\] {
+  width: 10%;
+}
+
+.w-\[15\%\] {
+  width: 15%;
+}
+
+.w-\[60\%\] {
+  width: 60%;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .appearance-none {
@@ -787,6 +835,11 @@ video {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
+.border-b-gray-400 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -810,6 +863,51 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pl-3 {
@@ -844,6 +942,34 @@ video {
   padding-left: 0.25rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pl-40 {
+  padding-left: 10rem;
+}
+
+.pl-80 {
+  padding-left: 20rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .text-\[1\.5rem\] {
   font-size: 1.5rem;
 }
@@ -856,6 +982,10 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[1\.8rem\] {
+  font-size: 1.8rem;
 }
 
 .font-bold {
@@ -902,6 +1032,11 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-\[\#BDBDBD\] {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
 }
 
 .opacity-5 {

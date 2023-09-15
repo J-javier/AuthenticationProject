@@ -31,40 +31,52 @@
                 </div>
             </section>
             <section class="w-full h-full flex flex-col justify-center items-center">
-                <h1 class="font-bold text-[1.5rem]">We almost done! </h1>
-                <div class="border rounded-md w-[55%] h-[85%] shadow-md border-gray-300">
-                    <div class="pl-8 py-5 ">
-                        <h1 class="font-semibold text-[1.5rem]">Complete information</h1>
-                        <p class="text-[#828282]">Information will be saved</p>
+                <div  class="flex flex-col items-center pb-4">
+                    <h1 class="font-semibold text-[1.8rem]">Personal info</h1>
+                    <h3>Basic info, like your name and photo</h3>
+                </div>
+                <div class="border rounded-md w-[60%] h-auto shadow-md">
+                    <div class="flex justify-between items-center border border-b-gray-400 py-6 px-8  ">
+                        <div>
+                            <h1 class="font-semibold text-[1.5rem]">Profile</h1>
+                            <p class="text-[#828282]">Some info may be visible to other people</p>
+                        </div>
+                        <div>
+                            <form action="#" method="post">
+                                <button type="submit" value="" class="py-1 px-6 border border-gray-400 text-[#828282] rounded-lg">Edit</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="pl-8">
-                        <form action="#" method="post">
-                            
-                            <div class="flex items-center"> 
-                                <div class="h-14 w-14 rounded-md border border-gray-300 flex justify-center items-center">
-                                    <img src="/src/images/blank_photo.jpg" alt="profilepicture" class="w-12 h-12 opacity-40 rounded-md border-gray-400 ">
-                                    <input type="file" class=" top-0 right-0 left-0 bottom-0 custom-input" id="fotoperfil" name="fotoperfil" hidden>
+                    <div>
+                        <div class="w-full flex flex-row items-center py-4 px-8 border border-b-gray-400 ">
+                            <span class="text-[#BDBDBD] w-[15%]">PHOTO</span>
+                            <div class="ml-32 py-0">
+                                <div class="w-16 h-16 flex justify-center items-center border border-gray-400 rounded-md ">
+                                    <img src="/src/images/blank_photo.jpg" alt="profilePhoto">
                                 </div>
-                                <label for="fotoperfil" class="pl-3 font-light text-[#828282]" >ADD PHOTO</label>
                             </div>
-
-                            <label for="nombre" class="text-sm ">Name</label><br>
-                            <input type="text" name="nombre" id="nombre" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
-
-                            <label for="biografia" class="text-sm ">Bio</label><br>
-                            <input type="text" name="biografia" id="biografia" placeholder="Enter your bio..." class="h-20  w-2/4 border border-gray-300 rounded-md mb-1" ><br>
-
-                            <label for="telefono" class="text-sm ">Phone</label><br>
-                            <input type="text" name="telefono" id="telefono" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
-
-                            <label for="correo" class="text-sm ">Email</label><br>
-                            <input type="text" name="correo" id="correo" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
-
-                            <label for="contrasena" class="text-sm ">Password</label><br>
-                            <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3"><br>
-
-                            <button class="py-2 px-6 bg-blue-500 text-white rounded-md" name="save">Save</button>
-                        </form>
+                        </div>
+                        <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
+                            <span class="text-[#BDBDBD] w-[15%]  ">NAME</span>
+                            <span class="font-semibold ml-32  ">Xanthe Neal</span>
+                        </div>
+                        <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
+                            <span class="text-[#BDBDBD] w-[15%]  ">BIO</span>
+                            <span class="font-semibold  ml-32">I am a software developer and a big fan of devchallenges..</span>
+                        </div>
+                        <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
+                            <span class="text-[#BDBDBD] w-[15%]  ">PHONE</span>
+                            <span class="font-semibold ml-32">908249274292</span>
+                        </div>
+                        <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
+                            <span class="text-[#BDBDBD] w-[15%]  ">EMAIL</span>
+                            <span class="font-semibold  ml-32">xanthe.neal@gmail.com</span>
+                        </div>
+                        <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 rounded-md ">
+                            <span class="text-[#BDBDBD] w-[15%]  ">PASSWORD</span>
+                            <span class="font-semibold ml-32">***********</span>
+                        </div>
+                       
                     </div>
                 </div>
             </section> 
