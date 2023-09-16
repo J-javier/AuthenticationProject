@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,14 +33,14 @@
                 </div>
             </section>
             <section class="w-full h-full flex flex-col justify-center items-center">
-                <h1 class="font-bold text-[1.5rem]">We almost done! </h1>
+                <h1 class="font-bold text-[1.5rem]">We almost done! Please complete the following information</h1>
                 <div class="border rounded-md w-[55%] h-auto shadow-md border-gray-300">
                     <div class="pl-8 py-5 ">
                         <h1 class="font-semibold text-[1.5rem]">Complete information</h1>
                         <p class="text-[#828282]">Information will be saved</p>
                     </div>
                     <div class="pl-8">
-                        <form action="#" method="post">
+                        <form action="/src/index.php" method="post">
                             
                             <div class="flex items-center"> 
                                 <div class="h-14 w-14 rounded-md border border-gray-300 flex justify-center items-center">
@@ -49,19 +51,26 @@
                             </div>
 
                             <label for="nombre" class="text-sm ">Name</label><br>
-                            <input type="text" name="nombre" id="nombre" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
+                            <input type="text" name="nombre" id="nombre" placeholder="Enter your name..." 
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
 
                             <label for="biografia" class="text-sm ">Bio</label><br>
-                            <input type="text" name="biografia" id="biografia" placeholder="Enter your bio..." class="h-20  w-2/4 border border-gray-300 rounded-md mb-1" ><br>
+                            <input type="text" name="biografia" id="biografia" placeholder="Enter your bio..." 
+                            class="h-20  w-2/4 border border-gray-300 rounded-md mb-1" ><br>
 
                             <label for="telefono" class="text-sm ">Phone</label><br>
-                            <input type="text" name="telefono" id="telefono" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
-
+                            <input type="text" name="telefono" id="telefono" placeholder="Enter your name..." 
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
+                            
                             <label for="correo" class="text-sm ">Email</label><br>
-                            <input type="text" name="correo" id="correo" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
+                            <input type="text" name="correo" id="correo" placeholder="Enter your name..." 
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" 
+                            value="<?= $_SESSION["correo_usuario"] ?>"><br>
 
-                            <label for="contrasena" class="text-sm ">Password</label><br>
-                            <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3"><br>
+                            <label for="contrasena" class="text-sm">Password</label><br>
+                            <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." 
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3" 
+                            value="<?= ($_SESSION["contrasena_usuario"]) ?>"><br>
 
                             <div class="pb-2 ">
                                 <button class="py-2 px-6 bg-blue-500 text-white rounded-md" name="save">Save</button>

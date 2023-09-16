@@ -42,7 +42,7 @@
                             <p class="text-[#828282]">Some info may be visible to other people</p>
                         </div>
                         <div>
-                            <form action="#" method="post">
+                            <form action="/src/views/profile/profile_edit.php" method="post">
                                 <button type="submit" value="" class="py-1 px-6 border border-gray-400 text-[#828282] rounded-lg">Edit</button>
                             </form>
                         </div>
