@@ -36,7 +36,6 @@ class validation
         $correo=$data["correo"];
         $contrasena=$data["contrasena"];
         $telefono=$data["telefono"];
-        //$foto=$data["fotoperfil"];
         $hash = password_hash($contrasena , PASSWORD_DEFAULT);
 
         if (!empty($_FILES["fotoperfil"]["tmp_name"])) {

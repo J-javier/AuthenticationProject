@@ -36,7 +36,15 @@ $userData = $userDataController->mostrarPerfil($_SESSION["correo_usuario"]);
 
                 <div class="dropdown">
                     <div class="flex flex-row items-center w-50">
-                        <div class="h-[1.5rem] w-[1.5rem]"><img src="/src/images/blank_photo.jpg" alt="profile"></div>
+                        <div class="h-[1.5rem] w-[1.5rem]">
+                            <?php
+                            if(isset($userData["url_photo"])){
+                                $dataImg= base64_encode($userData["url_photo"]);
+                                echo "<img src='data:image/jpeg;base64,$dataImg' alt='' />";
+                            }
+                                echo "<img src='/src/images/blank_photo.jpg' />";
+                            ?>
+                        </div>
                         <button id="dropdownBtn" class="dropdown-button font-semibold ">Profile User<span class="arrow">&#9660;</span></button>
                     </div>
                     <div id="dropdownContent" class="dropdown-content">
@@ -68,8 +76,13 @@ $userData = $userDataController->mostrarPerfil($_SESSION["correo_usuario"]);
                             <span class="text-[#BDBDBD] w-[15%]">PHOTO</span>
                             <div class="ml-32 py-0">
                                 <div class="w-16 h-16 flex justify-center items-center border border-gray-400 rounded-md ">
-                                    <!-- here is the code to print the profile photo -->
-                                    <img src="/src/images/blank_photo.jpg" alt="profilePhoto">
+                                <?php
+                                    if(isset($userData["url_photo"])){
+                                        $dataImg= base64_encode($userData["url_photo"]);
+                                        echo "<img src='data:image/jpeg;base64,$dataImg' alt='' />";
+                                    }
+                                        echo "<img src='/src/images/blank_photo.jpg' />";
+                                ?>
                                 </div>
                             </div>
                         </div>
