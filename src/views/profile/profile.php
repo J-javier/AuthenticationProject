@@ -6,6 +6,11 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
     exit(); 
 }
 
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/controller/main_controller.php" );
+
+$userDataController = new user();
+$userData = $userDataController->mostrarPerfil($_SESSION["correo_usuario"]); 
+
 ?>
 
 
@@ -53,7 +58,7 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                             <p class="text-[#828282]">Some info may be visible to other people</p>
                         </div>
                         <div>
-                            <form action="/src/views/profile/profile_edit.php" method="post">
+                            <form action="/src/index.php" method="post">
                                 <button type="submit" value="" class="py-1 px-6 border border-gray-400 text-[#828282] rounded-lg">Edit</button>
                             </form>
                         </div>
@@ -63,25 +68,26 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                             <span class="text-[#BDBDBD] w-[15%]">PHOTO</span>
                             <div class="ml-32 py-0">
                                 <div class="w-16 h-16 flex justify-center items-center border border-gray-400 rounded-md ">
+                                    <!-- here is the code to print the profile photo -->
                                     <img src="/src/images/blank_photo.jpg" alt="profilePhoto">
                                 </div>
                             </div>
                         </div>
                         <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
                             <span class="text-[#BDBDBD] w-[15%]  ">NAME</span>
-                            <span class="font-semibold ml-32  ">Xanthe Neal</span>
+                            <span class="font-semibold ml-32  "><?= $userData["user_name"] ?></span>
                         </div>
                         <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
                             <span class="text-[#BDBDBD] w-[15%]  ">BIO</span>
-                            <span class="font-semibold  ml-32">I am a software developer and a big fan of devchallenges..</span>
+                            <span class="font-semibold  ml-32"><?= $userData["biography"] ?></span>
                         </div>
                         <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
                             <span class="text-[#BDBDBD] w-[15%]  ">PHONE</span>
-                            <span class="font-semibold ml-32">908249274292</span>
+                            <span class="font-semibold ml-32"><?= $userData["phone_number"] ?></span>
                         </div>
                         <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 ">
                             <span class="text-[#BDBDBD] w-[15%]  ">EMAIL</span>
-                            <span class="font-semibold  ml-32">xanthe.neal@gmail.com</span>
+                            <span class="font-semibold  ml-32"><?= $userData["email"] ?></span>
                         </div>
                         <div class="w-full flex flex-row py-5 px-8 border border-b-gray-400 rounded-md ">
                             <span class="text-[#BDBDBD] w-[15%]  ">PASSWORD</span>

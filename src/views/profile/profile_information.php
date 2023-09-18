@@ -34,7 +34,7 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                         <button id="dropdownBtn" class="dropdown-button font-semibold ">Profile User<span class="arrow">&#9660;</span></button>
                     </div>
                     <div id="dropdownContent" class="dropdown-content">
-                        <a href="/src/views/profile/profile.php"><div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div></a>
+                        <a href="#"><div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div></a>
                         <a href="#" class="border-b-2 "><div class="flex pvisual"><img src="/src/images/group.svg" alt="group" class="pr-2">Group Chat</div></a>
                         <a href="#" class=""><div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div></a>
                     </div>
@@ -55,29 +55,29 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                                     <img src="/src/images/blank_photo.jpg" alt="profilepicture" class="w-12 h-12 opacity-40 rounded-md border-gray-400 ">
                                     <input type="file" class=" top-0 right-0 left-0 bottom-0 custom-input" id="fotoperfil" name="fotoperfil" hidden>
                                 </div>
-                                <label for="fotoperfil" class="pl-3 font-light text-[#828282]" >ADD PHOTO</label>
+                                <label for="fotoperfil" class="pl-3 font-light text-[#828282]">ADD PHOTO</label>
                             </div>
 
                             <label for="nombre" class="text-sm ">Name</label><br>
                             <input type="text" name="nombre" id="nombre" placeholder="Enter your name..." 
-                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" required><br>
 
                             <label for="biografia" class="text-sm ">Bio</label><br>
                             <input type="text" name="biografia" id="biografia" placeholder="Enter your bio..." 
-                            class="h-20  w-2/4 border border-gray-300 rounded-md mb-1" ><br>
+                            class="h-20  w-2/4 border border-gray-300 rounded-md mb-1" required><br>
 
                             <label for="telefono" class="text-sm ">Phone</label><br>
                             <input type="text" name="telefono" id="telefono" placeholder="Example (908)-098-9865" 
-                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" required><br>
                             
                             <label for="correo" class="text-sm ">Email</label><br>
                             <input type="text" name="correo" id="correo" placeholder="Enter your name..." 
-                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" 
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" required
                             value="<?= $_SESSION["correo_usuario"] ?>"><br>
 
                             <label for="contrasena" class="text-sm">Password</label><br>
                             <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." 
-                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3" 
+                            class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3" required
                             value="<?= ($_SESSION["contrasena_usuario"]) ?>"><br>
 
                             <div class="pb-2 ">

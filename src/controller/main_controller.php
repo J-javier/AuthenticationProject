@@ -25,6 +25,18 @@ class user{
          $login = new validation();
          $login->login($data);
     }
+
+    public function mostrarPerfil($correo)
+    {
+        if (isset($_SESSION["correo_usuario"])) {
+            $correo = $_SESSION["correo_usuario"];
+            
+            $validacion = new validation();
+            $userData = $validacion->obtenerDatosUsuario($correo);
+
+            return $userData;
+        } 
+    }
 }
 
 ?>
