@@ -31,7 +31,7 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                 <div class="dropdown">
                     <div class="flex flex-row items-center w-50">
                         <div class="h-[1.5rem] w-[1.5rem]"><img src="/src/images/blank_photo.jpg" alt="profile"></div>
-                        <button id="dropdownBtn" class="dropdown-button font-semibold ">Profile User<span class="arrow">&#9660;</span></button>
+                        <button id="dropdownBtn" class="dropdown-button font-semibold "><?= $userData["user_name"] ?><span class="arrow">&#9660;</span></button>
                     </div>
                     <div id="dropdownContent" class="dropdown-content">
                         <a href="#"><div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div></a>

@@ -44,7 +44,7 @@ $userData = $userDataController->mostrarPerfil($_SESSION["correo_usuario"]);
                                 echo "<img src='/src/images/blank_photo.jpg' />";
                             ?>
                         </div>
-                        <button id="dropdownBtn" class="dropdown-button font-semibold ">Profile User<span class="arrow">&#9660;</span></button>
+                        <button id="dropdownBtn" class="dropdown-button font-semibold "><?= $userData["user_name"] ?><span class="arrow">&#9660;</span></button>
                     </div>
                     <div id="dropdownContent" class="dropdown-content">
                         <a href="/src/views/profile/profile.php"><div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div></a>
