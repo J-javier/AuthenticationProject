@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"])) {
+    header("Location: /src/views/register/register.php");
+    exit(); 
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +36,7 @@
                     <div id="dropdownContent" class="dropdown-content">
                         <a href="/src/views/profile/profile.php"><div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div></a>
                         <a href="#" class="border-b-2 "><div class="flex pvisual"><img src="/src/images/group.svg" alt="group" class="pr-2">Group Chat</div></a>
-                        <a href="/src/views/Logout/logout.php" class=""><div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div></a>
+                        <a href="#" class=""><div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div></a>
                     </div>
                 </div>
             </section>
@@ -40,7 +48,7 @@
                         <p class="text-[#828282]">Information will be saved</p>
                     </div>
                     <div class="pl-8">
-                        <form action="/src/index.php" method="post">
+                        <form action="/src/index.php" method="post" enctype="multipart/form-data">
                             
                             <div class="flex items-center"> 
                                 <div class="h-14 w-14 rounded-md border border-gray-300 flex justify-center items-center">
@@ -59,7 +67,7 @@
                             class="h-20  w-2/4 border border-gray-300 rounded-md mb-1" ><br>
 
                             <label for="telefono" class="text-sm ">Phone</label><br>
-                            <input type="text" name="telefono" id="telefono" placeholder="Enter your name..." 
+                            <input type="text" name="telefono" id="telefono" placeholder="Example (908)-098-9865" 
                             class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1"><br>
                             
                             <label for="correo" class="text-sm ">Email</label><br>

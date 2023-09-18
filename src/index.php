@@ -9,13 +9,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ){
     }
     if (isset($_POST["save"])) {
         $firstView->inscripcion($_POST);
+    }
+    if (isset($_POST["login"])) {
+        $firstView->login($_POST);
     } 
-
 
 }else {
     $firstView->index();
 }
-
-
 
 ?>

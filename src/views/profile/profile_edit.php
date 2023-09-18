@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"])) {
+    header("Location: /src/views/register/register.php");
+    exit(); 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

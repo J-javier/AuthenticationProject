@@ -16,10 +16,15 @@ class user{
 
     public function inscripcion($data)
     {
-        var_dump($data);
-        /* include_once($_SERVER["DOCUMENT_ROOT"] . "/src/views/profile/profile.php" ); */
+       $inscripcion = new validation();
+       $inscripcion->registrar($data);
     }
 
+    public function login($data)
+    {
+         $login = new validation();
+         $login->login($data);
+    }
 }
 
 ?>

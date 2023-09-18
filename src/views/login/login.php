@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/src/styles/register/register.css">
 </head>
 <body class="w-screen h-screen">
-    <main class="w-full h-full flex justify-center items-center">
+    <main class="w-full h-full flex justify-center items-center flex-col">
         <div class="w-[30%] h-[55%] shadow-md border rounded-lg flex flex-col justify-center items-center gap-10 " >
             <section class="w-[80%] flex flex-col gap-2">
                 <div class="flex justify-start items-center gap-2 ">
@@ -27,7 +27,7 @@
                         <img src="/src/images/lock.svg" alt="password" class="px-2 ">
                         <input type="password" placeholder="Password" name="contrasena" class="appearance-none w-full h-full rounded-lg">
                     </div>
-                    <button type="submit" class="bg-blue-500 text-white rounded-lg w-full h-8">Login</button>
+                    <button type="submit" class="bg-blue-500 text-white rounded-lg w-full h-8" name="login">Login</button>
                 </form>
             </section>
             <section class="w-[80%] flex flex-col items-center gap-2">
@@ -40,6 +40,17 @@
                 </div>
                 <p class="text-[#828282]">Don't have an account yet?<a href="/src/views/register/register.php" class="text-blue-700 ">Register</a></p>
             </section>
+        </div>
+        <div>
+            <?php 
+                session_start();
+                if (isset($_SESSION["mensaje_error_login"])) {
+                    echo($_SESSION["mensaje_error_login"]);
+                    unset($_SESSION["mensaje_error_login"]);
+                }else {
+                    session_destroy();
+                }
+            ?>
         </div>
     </main>
 </body>
