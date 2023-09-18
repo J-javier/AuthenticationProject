@@ -71,12 +71,12 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                             class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" required><br>
                             
                             <label for="correo" class="text-sm ">Email</label><br>
-                            <input type="text" name="correo" id="correo" placeholder="Enter your name..." 
+                            <input type="text" name="correo" id="correo" placeholder="Enter your email..." 
                             class="h-11 w-2/4 border border-gray-300 rounded-md  mb-1" required
                             value="<?= $_SESSION["correo_usuario"] ?>"><br>
 
                             <label for="contrasena" class="text-sm">Password</label><br>
-                            <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." 
+                            <input type="text" name="contrasena" id="contrasena" placeholder="Enter your password..." 
                             class="h-11 w-2/4 border border-gray-300 rounded-md  mb-3" required
                             value="<?= ($_SESSION["contrasena_usuario"]) ?>"><br>
 

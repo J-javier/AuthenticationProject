@@ -13,6 +13,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ){
     if (isset($_POST["login"])) {
         $firstView->login($_POST);
     } 
+    if (isset($_POST["update"])) {
+        $firstView->update($_POST);
+    } 
 
 }else {
     $firstView->index();

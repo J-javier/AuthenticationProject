@@ -37,6 +37,12 @@ class user{
             return $userData;
         } 
     }
+
+    public function update($data)
+    {
+        $update = new validation();
+        $update->actualizar($data);
+    }
 }
 
 ?>

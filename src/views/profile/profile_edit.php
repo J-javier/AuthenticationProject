@@ -6,6 +6,11 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
     exit(); 
 }
 
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/controller/main_controller.php" );
+
+$userDataController = new user();
+$userData = $userDataController->mostrarPerfil($_SESSION["correo_usuario"]); 
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +35,15 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
 
                 <div class="dropdown">
                     <div class="flex flex-row items-center w-50">
-                        <div class="h-[1.5rem] w-[1.5rem]"><img src="/src/images/blank_photo.jpg" alt="profile"></div>
+                        <div class="h-[1.5rem] w-[1.5rem]">
+                        <?php
+                            if(isset($userData["url_photo"])){
+                                $dataImg= base64_encode($userData["url_photo"]);
+                                echo "<img src='data:image/jpeg;base64,$dataImg' alt='' />";
+                            }
+                                echo "<img src='/src/images/blank_photo.jpg' />";
+                            ?>
+                        </div>
                         <button id="dropdownBtn" class="dropdown-button font-semibold ">Profile User<span class="arrow">&#9660;</span></button>
                     </div>
                     <div id="dropdownContent" class="dropdown-content">
@@ -50,32 +63,45 @@ if (!isset($_SESSION["correo_usuario"]) || !isset($_SESSION["contrasena_usuario"
                         <p class="text-[#828282]">Changes will be reflected to every services</p>
                     </div>
                     <div class="pl-8">
-                        <form action="#" method="post">
+                        <form action="/src/index.php" method="post" enctype="multipart/form-data">
                             
                             <div class="flex items-center"> 
                                 <div class="h-14 w-14 rounded-md border border-gray-300 flex justify-center items-center">
-                                    <img src="/src/images/blank_photo.jpg" alt="profilepicture" class="w-12 h-12 opacity-40 rounded-md border-gray-400 ">
+                                <?php
+                                    if(isset($userData["url_photo"])){
+                                        $dataImg= base64_encode($userData["url_photo"]);
+                                        echo "<img src='data:image/jpeg;base64,$dataImg' alt='' />";
+                                    }
+                                        echo "<img src='/src/images/blank_photo.jpg' />";
+                                ?>
                                     <input type="file" class=" top-0 right-0 left-0 bottom-0 custom-input" id="fotoperfil" name="fotoperfil" hidden>
                                 </div>
                                 <label for="fotoperfil" class="pl-3 font-light text-[#828282]" >CHANGE PHOTO</label>
                             </div>
-
+                            
                             <label for="nombre" class="text-sm ">Name</label><br>
-                            <input type="text" name="nombre" id="nombre" placeholder="Enter your name..." class="h-11 w-2/4 pl-1 border border-gray-500 rounded-md  mb-1"><br>
+                            <input type="text" name="nombre" id="nombre" placeholder="Enter your name..." required
+                            class="h-11 w-2/4 pl-1 border border-gray-500 rounded-md  mb-1" value="<?= $userData["user_name"] ?>"><br>
 
                             <label for="biografia" class="text-sm ">Bio</label><br>
-                            <input type="text" name="biografia" id="biografia" placeholder="Enter your bio..." class="h-20  w-2/4 pl-1 border border-gray-500 rounded-md mb-1" ><br>
+                            <input type="text" name="biografia" id="biografia" placeholder="Enter your bio..." required
+                            class="h-20  w-2/4 pl-1 border border-gray-500 rounded-md mb-1" value="<?= $userData["biography"] ?>"><br>
 
                             <label for="telefono" class="text-sm ">Phone</label><br>
-                            <input type="text" name="telefono" id="telefono" placeholder="Enter your name..." class="h-11 w-2/4 pl-1 border border-gray-500 rounded-md  mb-1"><br>
+                            <input type="text" name="telefono" id="telefono" placeholder="Enter your phone number..." required
+                            class="h-11 w-2/4 pl-1 border border-gray-500 rounded-md  mb-1" value="<?= $userData["phone_number"] ?>"><br>
 
                             <label for="correo" class="text-sm ">Email</label><br>
-                            <input type="text" name="correo" id="correo" placeholder="Enter your name..." class="h-11 w-2/4 border pl-1 border-gray-500 rounded-md  mb-1"><br>
+                            <input type="text" name="correo" id="correo" placeholder="Enter your email..." required
+                            class="h-11 w-2/4 border pl-1 border-gray-500 rounded-md  mb-1" value="<?= $userData["email"] ?>"><br>
 
                             <label for="contrasena" class="text-sm ">Password</label><br>
-                            <input type="text" name="contrasena" id="contrasena" placeholder="Enter your name..." class="h-11 w-2/4 pl-1 border border-gray-500 rounded-md  mb-3"><br>
+                            <input type="password" name="contrasena" id="contrasena" placeholder="Enter your password..." required
+                            class="h-11 w-2/4 pl-1 border border-gray-500 rounded-md  mb-3" ><br>
+                            
+                            <input type="text" value="<?= $userData["id_user"] ?>" name="id" hidden>
                             <div class="pb-2 ">
-                                <button class="py-2 px-6 bg-blue-500 text-white rounded-md" name="save">Save</button>
+                                <button class="py-2 px-6 bg-blue-500 text-white rounded-md" name="update">Save</button>
                             </div>
                         </form>
                     </div>

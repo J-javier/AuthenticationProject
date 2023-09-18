@@ -107,6 +107,97 @@ class validation
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function actualizar($data)
+    {
+        $databaseinf = new database();
+        $id=$data["id"];
+        $nombre=$data["nombre"];
+        $biografia=$data["biografia"];
+        $correo=$data["correo"];
+        $contrasena=$data["contrasena"];
+        $telefono=$data["telefono"];
+        $hash = password_hash($contrasena , PASSWORD_DEFAULT);
 
+        if (!empty($_FILES["fotoperfil"]["tmp_name"])) {
+            $img_blob = addslashes(file_get_contents($_FILES["fotoperfil"]["tmp_name"]));
+        } else {
+            $img_blob = null; 
+        }
+        
+        if (isset($img_blob)) {    
+            
+            if($nombre !== " "){
+                $consulta = "UPDATE user SET user_name = ? WHERE id_user = ? ";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$nombre , $id]);
+            }
+
+            if ($biografia !== "") {
+                $consulta = "UPDATE user SET biography = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$biografia, $id]);
+            }
+        
+            if ($correo ==! "") {
+                $consulta = "UPDATE user SET email = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$correo, $id]);
+                session_start();
+                $_SESSION["correo_usuario"] = $correo;
+            }
+            
+            if ($telefono ==! "") {
+                $consulta = "UPDATE user SET phone_number = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$telefono, $id]);
+            }
+            
+            if ($contrasena ==! "") {
+                $consulta = "UPDATE user SET user_password = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$hash, $id]);
+            }
+            
+
+            header("Location: /src/views/profile/profile.php");
+
+        } else {
+            
+            if($nombre !== " "){
+                $consulta = "UPDATE user SET user_name = ? WHERE id_user = ? ";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$nombre , $id]);
+            }
+
+            if ($biografia !== "") {
+                $consulta = "UPDATE user SET biography = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$biografia, $id]);
+            }
+        
+            if ($correo ==! "") {
+                $consulta = "UPDATE user SET email = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$correo, $id]);
+                session_start();
+                $_SESSION["correo_usuario"] = $correo;
+            }
+            
+            if ($telefono ==! "") {
+                $consulta = "UPDATE user SET phone_number = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$telefono, $id]);
+            }
+            
+            if ($contrasena ==! "") {
+                $consulta = "UPDATE user SET user_password = ? WHERE id_user = ?";
+                $stmt = $databaseinf->connect()->prepare($consulta);
+                $stmt->execute([$hash, $id]);
+            }
+    
+            header("Location: /src/views/profile/profile.php");
+        }
+        $databaseinf->disconnect();
+    }
 }
 ?>
